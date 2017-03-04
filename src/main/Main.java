@@ -1,10 +1,14 @@
 package main;
 
+import game.GameManager;
+
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO 自動生成されたメソッド・スタブ
+		GameManager game = new GameManager();
 
+		// ゲーム実行
+		game.execute();
 	}
 
 }
