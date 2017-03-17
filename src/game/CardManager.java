@@ -21,6 +21,22 @@ public class CardManager {
 	public CardManager() {
 		this.cardList = new ArrayList<Card>();
 		createCardList();
+		shuffle();
+	}
+
+	/**
+	 * シャッフルする
+	 */
+	public void shuffle() {
+		Card temp = null;
+		for (int i = 0; i < 1000; i++) {
+			int from = NumberUtil.getRndNo(PIC_VAL * NUM_VAL - 1);
+			int to = NumberUtil.getRndNo(PIC_VAL * NUM_VAL - 1);
+			temp = this.cardList.get(from);
+			this.cardList.set(from, this.cardList.get(to));
+			this.cardList.set(to, temp);
+		}
+
 	}
 
 	/**
@@ -63,5 +79,18 @@ public class CardManager {
 		Card card = this.cardList.get(i);
 		this.cardList.remove(i);
 		return card;
+	}
+
+	/**
+	 * カードを5枚ひく
+	 *
+	 * @return
+	 */
+	public List<Card> get5CardList() {
+		List<Card> cardList = new ArrayList<Card>();
+		for (int i = 0; i < 5; i++) {
+			cardList.add(this.cardList.get(i));
+		}
+		return cardList;
 	}
 }

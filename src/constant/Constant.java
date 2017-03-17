@@ -12,6 +12,19 @@ public class Constant {
 	public static final int END = 0;
 
 	/**
+	 * カード選択
+	 */
+	public static final int CARD1 = 1;
+	public static final int CARD2 = 2;
+	public static final int CARD3 = 3;
+	public static final int CARD4 = 4;
+	public static final int CARD5 = 5;
+	/**
+	 * 決定
+	 */
+	public static final int DECIDE = 9;
+
+	/**
 	 * ハート、スペード、クローバー、ダイヤ
 	 */
 	public static final int H = 1;

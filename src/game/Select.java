@@ -44,4 +44,40 @@ public class Select {
 		}
 		return true;
 	}
+
+	/**
+	 * カード選択の番号でないか
+	 *
+	 * @return
+	 */
+	public boolean isNotSelectCard() {
+		if (this.num == Constant.CARD1) {
+			return false;
+		}
+		if (this.num == Constant.CARD2) {
+			return false;
+		}
+		if (this.num == Constant.CARD3) {
+			return false;
+		}
+		if (this.num == Constant.CARD4) {
+			return false;
+		}
+		if (this.num == Constant.CARD5) {
+			return false;
+		}
+		if (this.num == Constant.DECIDE) {
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * 番号を取得する
+	 *
+	 * @return
+	 */
+	public int getNum() {
+		return this.num;
+	}
 }

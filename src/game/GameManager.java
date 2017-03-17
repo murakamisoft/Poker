@@ -21,8 +21,11 @@ public class GameManager {
 	 */
 	public void execute() {
 
-		while (true) {
+		Board board = null;
+		CardManager cardManager = new CardManager();
+		CardPointJudger judger = null;
 
+		while (true) {
 			Select title = getSelectTitleNum();
 			// 終了
 			if (title.isEnd()) {
@@ -30,7 +33,64 @@ public class GameManager {
 				return;
 			}
 
+			board = new Board();
+			cardManager.createCardList();
+
+			// シャッフル
+			cardManager.shuffle();
+
+			// カード表示
+			board.setCard5List(cardManager.get5CardList());
+
+			selectCardNum(board);
+
+			judger = new CardPointJudger(cardManager.get5CardList());
+			judger.judge();
+
 		}
+
+	}
+
+	/**
+	 * カードを選択する
+	 *
+	 * @param board
+	 * @return
+	 */
+	private void selectCardNum(Board board) {
+		// 選択オブジェクト
+		Select select = null;
+
+		while (true) {
+			drawYakuList();
+
+			// カード出力
+			board.printCard5List();
+
+			// カードステータス出力
+			board.printCardStatusList();
+
+			select = new Select(ScanUtil.inputNum());
+
+			// エラー
+			if (select.isNotSelectCard()) {
+				ErrorMessageUtil.printInputError();
+			} else {
+				break;
+			}
+
+			// カードの残す配るを設定
+			board.changeStatus(select.getNum());
+
+		}
+	}
+
+	/**
+	 * 役を描画する
+	 */
+	private void drawYakuList() {
+		// TODO 自動生成されたメソッド・スタブ
+
 	}
 
 	/**
