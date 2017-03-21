@@ -66,7 +66,7 @@ public class Select {
 		if (this.num == Constant.CARD5) {
 			return false;
 		}
-		if (this.num == Constant.DECIDE) {
+		if (this.num == Constant.CARD_DECIDE) {
 			return false;
 		}
 		return true;
@@ -79,5 +79,14 @@ public class Select {
 	 */
 	public int getNum() {
 		return this.num;
+	}
+
+	/**
+	 * カード決定の番号か
+	 *
+	 * @return
+	 */
+	public boolean isCardDeside() {
+		return this.num == Constant.CARD_DECIDE;
 	}
 }

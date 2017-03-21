@@ -70,12 +70,22 @@ public class GameManager {
 			// カードステータス出力
 			board.printCardStatusList();
 
-			select = new Select(ScanUtil.inputNum());
+			board.printSelectCardStatus();
 
-			// エラー
-			if (select.isNotSelectCard()) {
-				ErrorMessageUtil.printInputError();
-			} else {
+			while (true) {
+
+				select = new Select(ScanUtil.inputNum());
+
+				// エラー
+				if (select.isNotSelectCard()) {
+					ErrorMessageUtil.printInputError();
+				} else {
+					break;
+				}
+			}
+
+			// カード判定か
+			if (select.isCardDeside()) {
 				break;
 			}
 

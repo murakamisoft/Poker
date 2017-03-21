@@ -35,19 +35,35 @@ public class Card {
 	 */
 	public void printCard() {
 		System.out.print(this.picStr);
-		System.out.print(this.num);
+		System.out.print(getPrintNum());
+	}
+
+	/**
+	 * 出力用の番号を取得する
+	 *
+	 * @return
+	 */
+	private String getPrintNum() {
+		if (this.num >= 10) {
+			return Integer.toString(this.num);
+		}
+		return "0" + Integer.toString(this.num);
 	}
 
 	/**
 	 * ステータスを出力する
 	 *
+	 * @param i
+	 *            選択番号
+	 *
 	 * @return
 	 */
-	public void printStatus() {
+	public void printStatus(int i) {
 		if (this.status_hold) {
-			System.out.print("[残す]");
+			System.out.print("[" + i + "：●残す]");
+		} else {
+			System.out.print("[" + i + "：〇配る]");
 		}
-		System.out.print("[配る]");
 	}
 
 	/**

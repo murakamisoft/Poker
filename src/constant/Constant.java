@@ -22,7 +22,7 @@ public class Constant {
 	/**
 	 * 決定
 	 */
-	public static final int DECIDE = 9;
+	public static final int CARD_DECIDE = 9;
 
 	/**
 	 * ハート、スペード、クローバー、ダイヤ
@@ -35,4 +35,5 @@ public class Constant {
 	public static final String S_STR = "S";
 	public static final String C_STR = "C";
 	public static final String D_STR = "D";
+
 }

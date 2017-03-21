@@ -8,17 +8,25 @@ import java.util.List;
 public class CardPointJudger {
 
 	/**
+	 * カードリスト
+	 */
+	private List<Card> cardList;
+
+	/**
 	 * コンストラクタ
 	 *
-	 * @param get5CardList
+	 * @param cardList
 	 */
-	public CardPointJudger(List<Card> get5CardList) {
-		// TODO 自動生成されたコンストラクター・スタブ
+	public CardPointJudger(List<Card> cardList) {
+		this.cardList = cardList;
 	}
 
+	/**
+	 * カードの役判定
+	 */
 	public void judge() {
 		// TODO 自動生成されたメソッド・スタブ
-
+		System.out.println("役判定！");
 	}
 
 }
